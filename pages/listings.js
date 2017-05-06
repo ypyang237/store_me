@@ -9,7 +9,6 @@ class Listing extends Component {
     return(
       <div>
         <GlobalHeader />
-        <h1>My Listings</h1>
         <HostListing />
       </div>
     )
