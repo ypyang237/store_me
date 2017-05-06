@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import numeral from 'numeral';
+
 
 const customerData = [
   {
@@ -55,9 +55,11 @@ class CustomerListing extends Component {
       <div>
         <div>
           <h2>{earning}</h2>
-          <p>Customer Listings here</p>
+          <div className="customerTable">
           {customerTable}
+          </div>
         </div>
+
       </div>
     )
   };
