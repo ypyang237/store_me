@@ -11,7 +11,7 @@ class HomePage extends Component {
     return(
       <div className="homepage">
         <div className="maintext">
-          <h1>StoreMe</h1>
+          <h1>Storelax</h1>
           <h2>Find convenient, reliable storage near you</h2>
           <input type="text" placeholder="Search"></input>
           <button onClick={this.handleclick}>Search</button>
