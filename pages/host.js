@@ -9,7 +9,6 @@ class Host extends Component {
     return(
       <div>
         <GlobalHeader />
-        <h1>My Dashboard</h1>
         <CustomerListing />
       </div>
     )
