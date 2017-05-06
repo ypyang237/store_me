@@ -19,10 +19,12 @@
   },
   "homepage": "https://github.com/ypyang237/store_me#readme",
   "dependencies": {
+    "leaflet": "^1.0.3",
     "next": "^2.3.1",
     "next.js": "^1.0.3",
     "react": "^15.4.2",
     "react-bootstrap": "0.30.6",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-leaflet": "^1.1.6"
   }
 }

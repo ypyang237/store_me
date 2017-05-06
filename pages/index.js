@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import GlobalHeader from '../components/GlobalHeader/GlobalHeader';
+import GlobalHeader from '../components/GlobalHeader/GlobalHeader';
 // import GlobalFooter from '../components/GlobalFooter/GlobalFooter';
 import HomePage from '../components/HomePage/HomePage';
 
@@ -17,6 +17,7 @@ class Index extends Component {
   render() {
     return(
       <div>
+        <GlobalHeader />
         <HomePage />
       </div>
     )
