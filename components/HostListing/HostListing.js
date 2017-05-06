@@ -4,11 +4,23 @@ import { css } from 'glamor';
 
 const listingData = [
   {
-    name: 'Tom Banks',
+    name: 'Storage Cage 1',
     status: "Available",
-    image: "../../static/images/Tom.png",
+    image: "../../static/images/StorageCage.png",
     capacity: "50%"
-  }
+  },
+  {
+    name: 'Storage Cage 2',
+    status: "Available",
+    image: "../../static/images/Cage2.png",
+    capacity: "70%"
+  },
+  {
+    name: 'Wardrobe',
+    status: "Full",
+    image: "../../static/images/Wardrobe.png",
+    capacity: "0%"
+  },
 ];
 
 
@@ -31,6 +43,8 @@ class spaceListing extends Component {
                 </div>
                 <div className="custText">
                   <p><span className="bold">Name:</span> {listing.name}</p>
+                  <p><span className="bold">Status:</span> {listing.status}</p>
+                  <p><span className="bold">Capacity:</span> {listing.capacity}</p>
                 </div>
                 <style jsx>
                   {`
