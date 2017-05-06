@@ -1,24 +1,35 @@
 import React, { Component } from 'react';
 import { Map, TileLayer, Marker, Popup,  PropTypes as MapPropTypes, } from 'react-leaflet-universal';
+import Router from 'next/router';
 // import L from 'leaflet';
 
-// import icon from 'leaflet/dist/images/marker-icon.png';
-// import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+// L.Icon.Default.imagePath = '.';
+// // OR
+// delete L.Icon.Default.prototype._getIconUrl;
 
-// let DefaultIcon = L.icon({
-//     iconUrl: icon,
-//     shadowUrl: iconShadow
+// L.Icon.Default.mergeOptions({
+//   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+//   iconUrl: require('leaflet/dist/images/marker-icon.png'),
+//   shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
 // });
 
-// L.Marker.prototype.options.icon = DefaultIcon;
 
 // ToDo: we can add a filter for Storages if we like
 const customerFilter = null;
 
 // var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 
-const MyPopupMarker = ({ children, position }) => (
-  <Marker position={position}>
+const MyMarkersList = ({ markers, that }) => {
+    console.log('props', that)
+  const items = markers.map(({ key, ...props }) => (
+    <MyPopupMarker key={key} that={that} {...props} />
+  ));
+
+  return <div style={{ display: 'none' }}>{items}</div>;
+};
+
+const MyPopupMarker = ({ children, position, that }) => (
+  <Marker position={position} onClick={that.handleClick}>
     <Popup>
       <span>{children}</span>
     </Popup>
@@ -26,12 +37,6 @@ const MyPopupMarker = ({ children, position }) => (
 );
 
 
-const MyMarkersList = ({ markers }) => {
-  const items = markers.map(({ key, ...props }) => (
-    <MyPopupMarker key={key} {...props} />
-  ));
-  return <div style={{ display: 'none' }}>{items}</div>;
-};
 
 
 class StorageMap extends Component {
@@ -41,9 +46,11 @@ class StorageMap extends Component {
     zoom: 13,
   };
 
-  // handleClick = () => {
-  //     this.refs.map.leafletElement.locate();
-  //   };
+  handleClick = () => {
+    console.log('clidked!!')
+    Router.push('/host')
+      // this.refs.map.leafletElement.locate();
+    };
 
   // handleLocationFound = e => {
   //   this.setState({
@@ -55,11 +62,10 @@ class StorageMap extends Component {
   render() {
     const center = [this.state.lat, this.state.lng];
 
-
     const markers = [
-      { key: 'marker1', position: [-37.8053589, 144.9006315], children: 'My first popup' },
+      { key: 'marker1', position: [-37.817221,144.9658794], children: 'My first popup' },
       { key: 'marker2', position: [-37.8139172,144.9620963], children: 'My second popup' },
-      { key: 'marker3', position: [-37.8159695,144.9547773], children: 'My third popup' },
+      { key: 'marker3', position: [-37.8182711,144.9648731], children: 'My third popup' },
     ];
 
     return(
@@ -88,7 +94,7 @@ class StorageMap extends Component {
                 url="http://{s}.tile.osm.org/{z}/{x}/{y}.png"
               />
 
-              <MyMarkersList markers={markers} />
+              <MyMarkersList markers={markers} that={this}/>
 
 
             </Map>
