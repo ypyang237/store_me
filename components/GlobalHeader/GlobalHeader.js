@@ -36,7 +36,9 @@ class GlobalHeader extends Component {
           <title>Store Me</title>
           <link rel="stylesheet" type="text/css" href="/static/css/bootstrap-compile.css" />
           <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+          <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css"
+   integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ=="
+   crossorigin=""/>
         </Head>
         {this.renderNavbar()}
         <div style={{width: '100%', marginTop: '71px'}}></div>

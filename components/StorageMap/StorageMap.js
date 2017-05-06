@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 // ToDo: we can add a filter for Storages if we like
 const customerFilter = null;
 
-class CustomerListing extends Component {
+class StorageMap extends Component {
 
 
   render() {
@@ -19,4 +19,4 @@ class CustomerListing extends Component {
   };
 }
 
-export default CustomerListing;
+export default StorageMap;
