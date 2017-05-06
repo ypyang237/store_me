@@ -1,0 +1,28 @@
+{
+  "name": "store_me",
+  "version": "1.0.0",
+  "description": "Angel Hack project for storing solution",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ypyang237/store_me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ypyang237/store_me/issues"
+  },
+  "homepage": "https://github.com/ypyang237/store_me#readme",
+  "dependencies": {
+    "next": "^2.3.1",
+    "next.js": "^1.0.3",
+    "react": "^15.4.2",
+    "react-bootstrap": "0.30.6",
+    "react-dom": "^15.4.2"
+  }
+}
