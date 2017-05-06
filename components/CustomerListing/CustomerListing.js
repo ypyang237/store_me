@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { css } from 'glamor';
 
 
 const customerData = [
@@ -43,16 +44,31 @@ class CustomerListing extends Component {
 
       return (
         <div>
-          <p>{customer.name}</p>
-          <p>{customer.startDate}</p>
-          <p>{customer.endDate}</p>
-          <p>{customer.totalFee}</p>
+
+          <div className="col-lg-3 col-md-4 col-sm-6">
+            <div className={`${thumb} container-fluid`}>
+              <div className={`row`}>
+
+                <p className="col-md-6 ${info}">{customer.name}</p>
+                <p className="col-md-6">{customer.startDate}</p>
+                <p className="col-md-6">{customer.endDate}</p>
+                <p className="col-md-6">{customer.totalFee}</p>
+                <style jsx>
+                  {`
+                  p {
+                  color: blue;
+                  }
+                  `}
+                </style>
+              </div>
+            </div>
+          </div>
         </div>
       )
     })
 
     return(
-      <div>
+      <div >
         <div>
           <h2>{earning}</h2>
           <div className="customerTable">
@@ -66,3 +82,17 @@ class CustomerListing extends Component {
 }
 
 export default CustomerListing;
+
+
+//* Global Styles *//
+const thumb = css({
+  backgroundColor: 'red',
+  boxShadow: '1px 1px 3px 0 rgba(50,50,50,.3)',
+  marginBottom: '30px',
+  position: 'relative',
+  alignItems: 'center',
+  '@media (max-width: 768px)': {
+    maxWidth: '400px'
+  }
+});
+
