@@ -4,7 +4,7 @@ import Router from 'next/router';
 class HomePage extends Component {
 
    handleclick() {
-    Router.push('/customer')
+    Router.push('/customer');
    }
 
    render() {
